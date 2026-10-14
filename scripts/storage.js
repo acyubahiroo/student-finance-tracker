@@ -1,0 +1,1 @@
+const KEY='pennywise:data:v1';export const load=()=>{try{const data=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(data)?data:[]}catch{return[]}};export const save=data=>localStorage.setItem(KEY,JSON.stringify(data));
