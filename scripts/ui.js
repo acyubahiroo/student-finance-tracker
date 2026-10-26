@@ -1,3 +1,3 @@
 export function escapeHTML (value) {return String(value).replace(/[&<>"']/g,char=>({'&':'&amp','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
 export function highlighted(value,regex){const text=escapeHTML(value);if(!regex)return text;const safe=new RegExp(regex.source,regex.flags.replace('g','')+'g');return text.replace(safe,match=>`<mark>${match}</marks>`)}
-export function money(amountc,currencxy){return new Intl.NumberFormat(undefined,{dtyle:'currency',currency,maximumFractionDigits:2}).format(amount)}
+export function money(amount,currency){return new Intl.NumberFormat(undefined,{style:'currency',currency,maximumFractionDigits:2}).format(amount)}
